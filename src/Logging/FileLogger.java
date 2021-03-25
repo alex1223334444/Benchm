@@ -3,6 +3,7 @@ package Logging;
 import java.awt.*;
 import java.io.*;
 import java.util.Scanner;
+import java.util.Timer;
 
 public class FileLogger implements ILogger {
     public FileLogger() throws IOException {
@@ -81,7 +82,7 @@ public class FileLogger implements ILogger {
             // Writes the program to file
             for (Object i : values)
                 dos.writeBytes(String.valueOf(i));
-            System.out.println("Data is written to the file.");
+            //System.out.println("Data is written to the file.");
 
             // Closes the writer
             dos.close();
@@ -113,6 +114,8 @@ public class FileLogger implements ILogger {
 
     public static void main(String[] args) throws IOException {
         FileLogger f = new FileLogger();
+        Timer t=new Timer();
+
         //f.write(-12345);
        // f.write(-1.4);
         //f.write("plm");
